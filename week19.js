@@ -128,11 +128,10 @@ document.querySelector('.b-6').addEventListener('click', makeSix);*/
 	fetch('https://api.agify.io/')
 	.then(res => {
 		const result = res.json()
-		console.log(result);
 	})
-	//.then((data) => {
-		//console.log(data);
-	//})
+	.then((data) => {
+		console.log(data);
+	})
 	.catch((err) => {
 		console.log("ошибка. Запрос не выполнен: ", err);
 	});
@@ -586,35 +585,46 @@ document.querySelector('.b-27').addEventListener('click', makeTwentySeven);*/
 	setInterval(function() {
 		console.log('Прошло 3 секунды');
 	}, 3000);
-	clearInterval();
 }
 
 document.querySelector('.b-28').addEventListener('click', makeTwentyEight);*/
 
 
 //Задание 29
-//Создайте функцию makeTwentyNine, которая использует `setInterval` для отображения в консоли сообщения "Прошло 2 секунды" каждые 2 секунды.
+//Создайте функцию makeTwentyNine, которая использует `setInterval` для отображения в консоли сообщения "Прошло 2 секунды. Время вышло!".
 
-/*function makeTwentyNine() {
-	//Ваш код
-	setInterval(function() {
-		console.log('Прошло 2 секунды');
-	}, 2000);
-	clearInterval();
+ /*function makeTwentyNine() {
+  let count = 0;
+
+  function showMessage() {
+    console.log("Прошло 2 секунды");
+    clearInterval(intervalId); // Остановка интервала после первого вызова
+    console.log("Время вышло");
+  }
+
+  const intervalId = setInterval(showMessage, 2000);
 }
 
 document.querySelector('.b-29').addEventListener('click', makeTwentyNine);*/
 
 
 //Задание 30
-//Создайте функцию makeThirty, которая использует `setInterval` для отображения в консоли сообщения "Прошло 5 секунд" каждые 5 секунд.
+//Создайте функцию makeThirty, которая использует `setInterval` для отображения в консоли сообщения "Прошло 5 секунд" каждые 5 секунд 3 раза.
 
 /*function makeThirty() {
 	//Ваш код
-	setInterval(function() {
-		console.log("Прошло 5 секунды");
-	}, 5000);
-	clearInterval();
+	let count = 0;
+
+	function showMessage () {
+		count ++;
+		console.log(`Прошло ${count * 5} секунд`);
+		if (count === 3) {
+			clearInterval(timerInterval);
+			console.log('Время вышло!');
+		}
+	}
+
+	let timerInterval = setInterval(showMessage, 5000);
 }
 
 document.querySelector('.b-30').addEventListener('click', makeThirty);*/
